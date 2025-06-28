@@ -102,5 +102,9 @@ document.getElementById('downloadExcelBtn').addEventListener('click', () => {
   const worksheet = XLSX.utils.json_to_sheet(data);
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet, 'Tasks');
-  XLSX.writeFile(workbook, 'TaskList.xlsx');
+
+  const fileName = prompt('Enter a file name for your Excel sheet:', 'TaskList');
+  if (fileName && fileName.trim() !== '') {
+    XLSX.writeFile(workbook, `${fileName.trim()}.xlsx`);
+  }
 });
