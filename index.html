@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Task Manager</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
@@ -13,6 +13,7 @@
 
     <div class="task-input">
       <input type="text" id="taskInput" placeholder="Enter a new task" />
+      <input type="datetime-local" id="deadlineInput" />
       <button id="addTaskBtn">Add Task</button>
     </div>
 
@@ -23,6 +24,13 @@
     <ul id="completedList"></ul>
 
     <button id="downloadExcelBtn">Download Excel</button>
+
+    <h2>Download History</h2>
+    <select id="historySelect">
+      <option value="">-- Select Previous Download --</option>
+    </select>
+    <button id="loadHistoryBtn">Load Selected</button>
+    <button id="startNewBtn" style="display: none;">Start New Task List</button>
   </div>
 
   <script src="script.js"></script>
